@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.1
+
+The source is public at [Nemu-Bridge/nemu-sdk](https://github.com/Nemu-Bridge/nemu-sdk), and the npm
+page links to it. Nothing else changed.
+
 ## 2.0.0
 
 Breaking: client credentials (`client_id` and `client_secret`) are gone. Create the client with an
