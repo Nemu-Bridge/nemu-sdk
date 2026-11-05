@@ -1,0 +1,62 @@
+{
+  "name": "@nemu-ai/sdk",
+  "version": "2.0.0",
+  "description": "TypeScript SDK for the Nemu management API: workspaces, providers, models, prompts, quotas and OAuth.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:manifests",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "bun test",
+    "lint": "tsc --noEmit",
+    "build:manifests": "node scripts/write-manifests.mjs"
+  },
+  "keywords": [
+    "nemu",
+    "ai",
+    "sdk",
+    "api",
+    "oauth",
+    "llm",
+    "gateway"
+  ],
+  "author": "hiraeeth",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "homepage": "https://docs.nemu.cc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nemu-Bridge/nemu-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nemu-Bridge/nemu-sdk/issues"
+  },
+  "sideEffects": false
+}
