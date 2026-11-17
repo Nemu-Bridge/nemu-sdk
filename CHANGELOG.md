@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.2
+
+Requests name the SDK and its version in the `User-Agent` header (`nemu-sdk/2.0.2`), so Nemu can
+tell you plainly when a version stops working. Nothing else changed.
+
 ## 2.0.1
 
 The source is public at [Nemu-Bridge/nemu-sdk](https://github.com/Nemu-Bridge/nemu-sdk), and the npm
