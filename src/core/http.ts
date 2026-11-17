@@ -13,6 +13,7 @@ import type { NemuOptions } from "../types.js";
 import {
   API_VERSION_HEADER,
   LATEST_API_VERSION,
+  SDK_VERSION,
 } from "../versions.js";
 
 interface ErrorBody {
@@ -98,6 +99,7 @@ export class HttpClient {
             "content-type": "application/json",
             authorization: `Bearer ${token}`,
             [API_VERSION_HEADER]: this.api_version,
+            "user-agent": `nemu-sdk/${SDK_VERSION}`,
             ...this.headers,
           },
           body: body === undefined ? undefined : JSON.stringify(body),

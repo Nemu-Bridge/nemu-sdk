@@ -13,6 +13,8 @@ export const LATEST_API_VERSION: ApiVersion =
 
 export const API_VERSION_HEADER = "Nemu-Api-Version";
 
+export const SDK_VERSION = "2.0.1";
+
 export type HttpMethod = "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
 
 export enum Endpoint {
